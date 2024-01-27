@@ -14,14 +14,22 @@ const showDataPlayers=(players)=>{
     
     players.forEach(player => {
         console.log(player);
+
+         const {strThumb,strPlayer,strNationality,strSport,
+          strStatus } = player ;
         const div = document.createElement("div");
         div.classList.add("col");
         div.innerHTML=`
         <div class="card">
-          <img src="${player.strThumb}" class="card-img-top" alt="...">
+          <img src="${strThumb ? strThumb : "https://picsum.photos/200"}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">${player.strPlayer}</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">${strPlayer}</h5>
+            <p>${strNationality}</p>
+          </div>
+          <div class ="my-4">
+    
+         <button type="button" class="btn btn-info ms-2">Details</button>
+         <button " type="button" class="btn btn-danger ms-2">Delete</button>
           </div>
         </div>
         `;
